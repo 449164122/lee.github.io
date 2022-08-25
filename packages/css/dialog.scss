@@ -1,0 +1,112 @@
+.zfs-dialog-fade-enter-active, .zfs-dialog-fade-leave-active {
+  transition: all .3s ease;
+}
+.zfs-dialog-fade-enter, .zfs-dialog-fade-leave-to {
+  opacity: 0;
+  width: 0;
+}
+.zfs-over-lay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.zfs-dialog {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  overflow: hidden;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  width: 335px;
+  border-radius: 13px;
+  z-index: 2001;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    box-sizing: border-box;
+    padding: 28px 28px;
+    // margin: 14px 0 28px 0;
+    .title {
+      margin: 0;
+      width: 100%;
+      // padding-top: 28px;
+      text-align: center;
+      .title-text {
+        width: 100%;
+        display: inline-block;
+        font-size: 16px;
+        color: #010101;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    p {
+      width: 100%;
+      font-size: 14px;
+      color: #666666;
+      max-height: 180px;
+      overflow: auto;
+      margin: 0;
+    }
+    .addMargin {
+      // font-size: 17px;
+      // color: #010101;
+      margin-top: 6px;
+    }
+    .zfs-input__inner {
+      width: 100%;
+      margin-top: 14px;
+      border-radius: 4px;
+      color: #606266;
+      font-size: 14px;
+      height: 30px;
+      outline: none;
+      -webkit-appearance: none;
+      line-height: normal;
+      text-indent: 4px;
+      border: 1px solid #dcdfe6;
+      &.redBorder {
+        border:1px solid red;
+      }
+    }
+    .warningMsg {
+      font-size: 12px;
+      text-align: left;
+      margin: 4px 0 0 0;
+      color: red;
+    }
+  }
+  .bottons {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #4789FF;
+    border-top: 1px solid #E2E2E2;
+    &.confirm, &.prompt{
+      span {
+        display: block;
+        width: 50%;
+        height: 100%;
+        line-height: 50px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .cancel {
+        border-right: 1px solid #E2E2E2;
+        color: #333333;
+      }
+    }
+  }
+}

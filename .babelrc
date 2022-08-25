@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    ["import", {
+      "libraryName": "vant",
+      "libraryDirectory": "es",
+      "style": true
+    }]
+  ],
+  "env": {
+    "utils": {
+      "plugins": [
+        ["module-resolver", {
+          "root": ["zfs-mobile"],
+          "alias": {
+            "zfs-mobile/packages": "zfs-mobile/lib"
+          }
+        }]
+      ]
+    }
+  }
+}

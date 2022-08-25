@@ -1,0 +1,49 @@
+.zfs-cell {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 15px;
+  overflow: hidden;
+  color: #333333;
+  font-size: 13px;
+  line-height: 24px;
+  background-color: #fff;
+  &.dark {
+    background-color: #F9F9F9;
+  }
+  .zfs-cell__title {
+    flex: 1;
+    color: #333333;
+    font-size: 13px;
+    line-height: 24px;
+  }
+  .zfs-cell__value {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    color: #969799;
+    text-align: right;
+    vertical-align: middle;
+    word-wrap: break-word;
+    font-size: 13px;
+    line-height: 24px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .zfs-cell__value--alone {
+    color: #333333;
+    text-align: left;
+  }
+  .zfs-cell__label {
+    margin-top: 4px;
+    color: #969799;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .icon-arrow-right {
+    font-size: 22px;
+  }
+}

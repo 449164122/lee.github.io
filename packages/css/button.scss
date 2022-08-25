@@ -1,0 +1,57 @@
+.zfs-button {
+  .van-button {
+    &.van-button--loading {
+      color: #fff;
+    }
+  }
+  .van-button.big {
+    width: 300px;
+    height: 40px;
+  }
+  .van-button.medium {
+    width: 146px;
+    height: 40px;
+  }
+  .van-button.small {
+    width: 95px;
+    height: 40px;
+  }
+  .van-button.van-button--light {
+    background-color: #e7efff;
+    border: 1px solid #e7efff;
+    color: #4789ff;
+    .van-button__text {
+      color: #4789ff;
+    }
+  }
+  .van-button.van-button--primary {
+    background-color: #4789ff;
+    border: 1px solid #4789ff;
+  }
+  .van-button.van-button--danger {
+    background-color: #f76b6b;
+    border: 1px solid #f76b6b;
+  }
+  .van-button.van-button--success {
+    background-color: #00c676;
+    border: 1px solid #00c676;
+    .van-button__text {
+      color: #fff;
+    }
+  }
+  .van-button.van-button--warning {
+    background-color: #f78528;
+    border: 1px solid #f78528;
+    .van-button__text {
+      color: #fff;
+    }
+  }
+  .van-button.van-button--text {
+    border-color: transparent;
+    color: #409eff;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px;
+  }
+}

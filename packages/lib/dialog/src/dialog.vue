@@ -1,0 +1,82 @@
+<!--
+ * @Author: 李韬
+ * @Date: 2022-08-08 14:40:03
+ * @LastEditors: 李韬
+ * @LastEditTime: 2022-08-24 10:29:08
+-->
+<template>
+  <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
+  <div v-show="visible">
+    <div class="zfs-over-lay"></div>
+    <div class="zfs-dialog">
+      <div class="content">
+        <div class="title" v-if="title">
+          <i :class="['icon', iconclass]"></i>
+          <span class="title-text" v-if="title">{{ title }}</span>
+        </div>
+        <p :class="{addMargin: title }" v-html="message" :style="align"></p>
+        <input v-if="type ==='prompt'" type="text" autocomplete="off" :placeholder="placeholder" :class="[{redBorder: showRedBorder} , 'zfs-input__inner']" v-model="value">
+        <p class="warningMsg" v-show="showWarningMsg">{{warningMsg}}</p>
+      </div>
+      <div v-if="type ==='alert'" :class="['bottons', type]" @click="handlerConfirm">
+        {{ alertButtonText }}
+      </div>
+      <div v-else :class="['bottons', type]">
+        <span class="cancel" @click="handlerCancel">{{ cancelButtonText }}</span>
+        <span  @click="handlerConfirm">{{ confirmButtonText }}</span>
+      </div>
+    </div>
+  </div>
+  </transition>
+</template>
+
+<script>
+export default {
+  name: 'zfsDialog',
+  data() {
+    return {
+      title: '',
+      message: '',
+      type: 'alert',
+      iconclass: '',
+      value: '',
+      warningMsg: '',
+      inputPattern: '',
+      alertButtonText: '我知道了',
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      placeholder:'请输入',
+      visible: false,
+      showRedBorder: false,
+      showWarningMsg: false,
+      messageAlign: 'center',
+    }
+  },
+  computed: {
+    align() {
+      return {
+        'text-align': this.messageAlign
+      };
+    }
+  },
+  methods: {
+    handleAfterLeave() {
+      this.$destroy(true);
+      this.$el.parentNode.removeChild(this.$el);
+    },
+    handlerCancel() {
+      this.visible = false;
+      this.callback('cancel')
+    },
+    handlerConfirm() {
+      if (this.type === 'prompt' && (this.inputPattern && !this.inputPattern.test(this.value) || !this.value)) {
+        this.showRedBorder = true;
+        this.showWarningMsg = true;
+        return;
+      }
+      this.visible = false;
+      this.callback('confirm' ,this.value)
+    }
+  }
+}
+</script>

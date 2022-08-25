@@ -4,8 +4,14 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run build:js && npm run build:css && npm run build:utils",
+    "build:js": "webpack",
+    "build:css": "npx gulp sass fonts",
+    "build:directives": "babel packages/directives --out-dir lib/directives --ignore packages/directives/index.js",
+    "build:utils": "cross-env BABEL_ENV=utils babel packages/utils --out-dir lib/utils",
+    "lint": "vue-cli-service lint",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -16,9 +22,28 @@
     "@vue/cli-plugin-eslint": "~4.5.17",
     "@vue/cli-service": "~4.5.17",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.5",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.7",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "file-loader": "^6.2.0",
+    "gulp": "^4.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^5.1.0",
+    "html-withimg-loader": "^0.1.16",
+    "node-sass": "^7.0.1",
+    "sass": "^1.53.0",
+    "sass-loader": "^10.3.1",
+    "url-loader": "^4.1.1",
+    "vant": "^2.12.48",
+    "vue-loader": "^15.10.0",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.9.7",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.10.0"
   },
   "eslintConfig": {
     "root": true,
