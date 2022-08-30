@@ -1,17 +1,41 @@
+<!--
+ * @Author: 李韬
+ * @Date: 2022-08-25 11:56:46
+ * @LastEditors: 李韬
+ * @LastEditTime: 2022-08-29 13:49:22
+-->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <zfs-button type="primary" @click="handlerClick">>123</zfs-button>
+    <zfs-button size="small" @click="$message({type:'info',showClose:true,message:'消息提示内容'})">消息</zfs-button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  methods: {
+    handlerClick() {
+      this.$dialog(
+          {
+            title: '审批意见',
+            message: '内容内容内容内容内容',
+            type: 'prompt',
+            inputPattern:/[A-Z]/,
+            warningMsg:'只能输入大写字母'
+            // cb: function(value) {
+            //   if (value!='123') {
+            //     this.$message.warning('123');
+            //     return false;
+            //   }
+            //   return true;
+            // }
+          }
+        )
+    }
   }
 }
 </script>

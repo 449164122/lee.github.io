@@ -2,14 +2,14 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:38:27
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-25 15:13:23
+ * @LastEditTime: 2022-08-29 10:08:40
 -->
 <template>
   <transition name="zfs-loading-fade" @after-leave="handleAfterLeave">
     <div v-show="visible" class="zfs-loading">
       <div class="container">
         <slot>
-          <img :src="require('zfs-mobile/packages/images/loading.gif')">
+          <img :src="require('zfs-mobile/packages/images/loading.gif').default">
         </slot>
         <span class="zfs-loading__content">{{ message }}</span>
       </div>
@@ -24,7 +24,6 @@ export default {
     return {
       message: '',
       visible: false,
-      iconName: '',
     }
   },
   methods: {

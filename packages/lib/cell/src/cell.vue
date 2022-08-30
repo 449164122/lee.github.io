@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-23 13:47:42
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-24 09:21:23
+ * @LastEditTime: 2022-08-29 17:22:45
 -->
 <template>
   <div :class="['zfs-cell', {'dark': touched && isLink}]" @touchstart="handlertouch" @touchend="touchend" @touchcancel="touchend">
@@ -35,9 +35,6 @@ export default {
     return {
       touched: false,
     }
-  },
-  mounted() {
-
   },
   methods: {
     handlertouch() {

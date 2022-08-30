@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-08 14:40:03
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-24 10:29:08
+ * @LastEditTime: 2022-08-29 14:02:40
 -->
 <template>
   <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
@@ -15,7 +15,7 @@
           <span class="title-text" v-if="title">{{ title }}</span>
         </div>
         <p :class="{addMargin: title }" v-html="message" :style="align"></p>
-        <input v-if="type ==='prompt'" type="text" autocomplete="off" :placeholder="placeholder" :class="[{redBorder: showRedBorder} , 'zfs-input__inner']" v-model="value">
+        <input v-if="type ==='prompt'" type="text" autocomplete="off" :placeholder="placeholder" :class="[{redBorder: showRedBorder} , 'zfs-input__inner']" v-model="value" @input="handlerInput">
         <p class="warningMsg" v-show="showWarningMsg">{{warningMsg}}</p>
       </div>
       <div v-if="type ==='alert'" :class="['bottons', type]" @click="handlerConfirm">
@@ -50,6 +50,7 @@ export default {
       showRedBorder: false,
       showWarningMsg: false,
       messageAlign: 'center',
+      cb: ''
     }
   },
   computed: {
@@ -68,10 +69,22 @@ export default {
       this.visible = false;
       this.callback('cancel')
     },
+    handlerInput() {
+      if (this.type === 'prompt' && this.inputPattern) {
+        if (!this.inputPattern.test(this.value) || !this.value) {
+          this.showRedBorder = true;
+          this.showWarningMsg = true;
+        } else {
+          this.showRedBorder = false;
+          this.showWarningMsg = false;
+        }
+      }
+    },
     handlerConfirm() {
-      if (this.type === 'prompt' && (this.inputPattern && !this.inputPattern.test(this.value) || !this.value)) {
-        this.showRedBorder = true;
-        this.showWarningMsg = true;
+      if (this.type === 'prompt' && !this.cb(this.value)) {
+        return;
+      }
+      if (this.type === 'prompt' && this.showRedBorder) {
         return;
       }
       this.visible = false;

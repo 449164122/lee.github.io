@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-09 14:05:44
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-24 10:27:26
+ * @LastEditTime: 2022-08-29 17:34:21
 -->
 <template>
   <div :class="[size,'zfs-avatar']" :style="sizeStyle">
@@ -27,14 +27,13 @@ export default {
         return typeof val === 'number';
       }
     },
-    shape: {
-      type: String,
-      default: 'circle',
-      validator(val) {
-        return ['circle', 'square'].includes(val);
-      }
-    },
-    icon: String,
+    // shape: {
+    //   type: String,
+    //   default: 'circle',
+    //   validator(val) {
+    //     return ['circle', 'square'].includes(val);
+    //   }
+    // },
     src: String,
     alt: String,
     background: String,

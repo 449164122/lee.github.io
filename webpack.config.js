@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-19 13:54:07
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-25 14:41:18
+ * @LastEditTime: 2022-08-29 09:35:02
  */
 const path = require('path');
 var fs = require('fs');
@@ -59,7 +59,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             name: 'img/[name].[hash:6][ext]',
-            limit: 1024 * 5
+            limit: 1024 * 8,
           }
         }
       },

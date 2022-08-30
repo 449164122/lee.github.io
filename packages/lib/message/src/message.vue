@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:38:27
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-09 10:05:39
+ * @LastEditTime: 2022-08-26 15:34:30
 -->
 <template>
     <transition name="zfs-message-fade" @after-leave="handleAfterLeave">
@@ -19,7 +19,7 @@
       v-show="visible">
       <i :class="['icon', iconType]"></i>
       <span class="zfs-message__content">{{ message }}</span>
-      <div v-if="showClose" @click="visible = false" class="button">我知道了</div>
+      <div v-if="showClose" @click="visible = false" class="button">{{closeText}} </div>
     </div>
   </transition>
 </template>
@@ -33,8 +33,9 @@ export default {
       type: 'info',
       showClose: false,
       visible: false,
-      verticalOffset: 20,
+      verticalOffset: 0,
       duration: 2000,
+      closeText: '我知道了'
     }
   },
   mounted() {
