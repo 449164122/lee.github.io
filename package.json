@@ -1,6 +1,11 @@
 {
   "name": "zfs-mobile",
-  "version": "0.1.13",
+  "version": "0.1.14",
+  "descroption": "A Component Library for Vue.js.",
+  "files": [
+    "lib",
+    "packages"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run build:js && npm run build:css && npm run build:utils",
@@ -12,9 +17,10 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
+  "main": "lib/index.umd.js",
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "core-js": "^3.8.3",
+    "vue": "^2.7.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.17",
