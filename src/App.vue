@@ -2,12 +2,13 @@
  * @Author: 李韬
  * @Date: 2022-08-25 11:56:46
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-29 13:49:22
+ * @LastEditTime: 2022-08-30 10:58:39
 -->
 <template>
   <div id="app">
     <zfs-button type="primary" @click="handlerClick">>123</zfs-button>
     <zfs-button size="small" @click="$message({type:'info',showClose:true,message:'消息提示内容'})">消息</zfs-button>
+    <div v-detail="132">123123</div>
   </div>
 </template>
 

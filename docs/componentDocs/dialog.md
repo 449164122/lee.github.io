@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-29 16:53:14
+ * @LastEditTime: 2022-08-30 16:19:24
 -->
 # 模态框
 ## 示例
@@ -97,7 +97,7 @@
             title: '审批意见',
             message: '内容内容内容内容内容',
             type: 'prompt',
-            cb(value) {
+            beforeSubmit(value) {
               const reg = /[A-Za-z]/;
               if (!reg.test(value)) {
                 this.$message.error('必须包含字母');
@@ -116,10 +116,19 @@
 ## API
 |参数 | 说明 | 类型 |可选| 默认值 |
 | ---- | ---- | ---- | ---- | ---- |
-|message|消息文字|string|-  |加载中...    |
-|icon|加载图标|VNode|-|-|
+|title|标题|string|-  |-   |
+|message|内容|string|-|-|
+|type|模态框类型|string|alert,confirm,prompt|-|
+|iconclass|加载图标|string|-|-|
+|warningMsg|不满足正则提示信息|string|-|-|
+|inputPattern|type为prompt点确认之前的正则校验|正则|-|-|
+|alertButtonText|type为alert确认文字|string|-|我知道了|
+|cancelButtonText|取消文字|string|-|取消|
+|confirmButtonText|确认文字|string|-|确认|
+|placeholder|占位文字|string|-|请输入|
+|messageAlign|内容对齐方式|string|left,center,right|center|
 
 ## 方法
 |参数 | 说明 |
 | ---- | ---- |
-|close|关闭当前loading|
+|beforeSubmit|type为prompt点确认之前的校验函数|

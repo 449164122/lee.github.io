@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-08 14:40:03
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-29 14:02:40
+ * @LastEditTime: 2022-08-30 16:21:02
 -->
 <template>
   <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
@@ -50,7 +50,7 @@ export default {
       showRedBorder: false,
       showWarningMsg: false,
       messageAlign: 'center',
-      cb: ''
+      beforeSubmit: ''
     }
   },
   computed: {
@@ -81,7 +81,7 @@ export default {
       }
     },
     handlerConfirm() {
-      if (this.type === 'prompt' && !this.cb(this.value)) {
+      if (this.type === 'prompt' && this.beforeSubmit && !this.beforeSubmit(this.value)) {
         return;
       }
       if (this.type === 'prompt' && this.showRedBorder) {

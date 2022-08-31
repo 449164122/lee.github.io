@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-18 11:07:01
  * @LastEditors: 李韬
- * @LastEditTime: 2022-07-27 17:14:34
+ * @LastEditTime: 2022-08-30 16:34:58
 -->
 <template>
   <div class="zfs-button">
@@ -10,6 +10,7 @@
       :class="type !== 'text' && !vantSize? size : ''"
       :type="type"
       :size="vantSize"
+      :round="round"
       v-bind="$attrs"
       @click="handlerClick"
       @touchstart="handlerTouchstart"
@@ -36,6 +37,10 @@ export default {
       type: String,
       default: 'big',
     },
+    round: {
+      type: Boolean,
+      default: true
+    }
   },
   methods: {
     handlerClick(event) {

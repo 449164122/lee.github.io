@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:26:41
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-29 17:51:29
+ * @LastEditTime: 2022-08-30 16:54:17
  */
 module.exports = {
   theme: '',
@@ -14,6 +14,10 @@ module.exports = {
   plugins: ['demo-container'], // 配置插件
   markdown: {},
   themeConfig: {
+    nav: [
+        {text: '主页', link: '/'},
+        {text: '组件', link: '/componentDocs/introduce'}
+    ],
     sidebar: [
       {
         title: '指南',
@@ -22,6 +26,10 @@ module.exports = {
       {
         title: '搜索',
         path: '/componentDocs/search'
+      },
+      {
+        title: '徽标',
+        path: '/componentDocs/badge'
       },
       {
         title: '按钮',

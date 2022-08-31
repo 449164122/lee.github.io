@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:39:48
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-29 16:58:11
+ * @LastEditTime: 2022-08-30 16:33:45
 -->
 # 按钮
 
@@ -90,7 +90,7 @@ Props
 |native-type | 原生 button 标签的 type 属性 | string | button|
 |block | 是否为块级元素 | boolean | false|
 |plain | 是否为朴素按钮 | boolean | false|
-|round | 是否为圆形按钮 | boolean | false|
+|round | 是否为圆形按钮 | boolean | true|
 |disabled | 是否禁用按钮 | boolean | false|
 |hairline | 是否使用 0.5px 边框 | boolean | false|
 |loading | 是否显示为加载状态 | boolean | false|
