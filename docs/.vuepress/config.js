@@ -2,13 +2,13 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:26:41
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-30 16:54:17
+ * @LastEditTime: 2022-08-31 15:11:55
  */
 module.exports = {
   theme: '',
   title: 'zfs-mobile',
   description: 'VuePress搭建zfs-mobile的组件库文档教程示例代码',
-  base: '/',
+  base: '/zfs-mobile/',
   port: '8089',
   head: [],
   plugins: ['demo-container'], // 配置插件
@@ -16,7 +16,8 @@ module.exports = {
   themeConfig: {
     nav: [
         {text: '主页', link: '/'},
-        {text: '组件', link: '/componentDocs/introduce'}
+        {text: 'github', link: 'https://github.com/449164122/zfs-mobile/tree/gh-pages'},
+        {text: 'npm', link: 'https://www.npmjs.com/package/zfs-mobile'}
     ],
     sidebar: [
       {
