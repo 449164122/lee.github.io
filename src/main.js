@@ -1,6 +1,12 @@
+/*
+ * @Author: 李韬
+ * @Date: 2022-08-25 11:56:46
+ * @LastEditors: 李韬
+ * @LastEditTime: 2022-09-20 16:37:48
+ */
 import Vue from 'vue'
 import App from './App.vue'
-import zfsMobile from 'zfs-mobile/lib/index.umd';
+import zfsMobile from 'zfs-mobile';
 import 'zfs-mobile/lib/css/index.css';
 import directives from '../packages/directives'
 Vue.config.productionTip = false
