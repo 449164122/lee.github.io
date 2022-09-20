@@ -2,16 +2,18 @@
  * @Author: 李韬
  * @Date: 2022-08-23 13:47:42
  * @LastEditors: 李韬
- * @LastEditTime: 2022-09-20 17:08:23
+ * @LastEditTime: 2022-09-20 17:23:30
 -->
 <template>
   <div :class="['zfs-cell', {'dark': touched && isLink}]" @touchstart="handlertouch" @touchend="touchend" @touchcancel="touchend">
-    <div class="zfs-cell__title" v-if="title">
+    <div class="zfs-cell__title" v-if="title || $slots.title">
         <span v-detail>{{ title }}</span>
+        <slot name="title"></slot>
         <div class="zfs-cell__label" v-if="label">{{ label }}</div>
     </div> 
     <div :class="['zfs-cell__value', { 'zfs-cell__value--alone': value && !title }]">
         <span v-detail>{{ value }}</span>
+        <slot name="value"></slot>
     </div>
     <i v-if="isLink" class="icon-arrow-right"></i>
   </div>
