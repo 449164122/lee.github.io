@@ -1,6 +1,6 @@
 {
   "name": "zfs-mobile",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "descroption": "A Component Library for Vue.js.",
   "files": [
     "lib",
