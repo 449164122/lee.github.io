@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-08 14:40:03
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-30 16:21:02
+ * @LastEditTime: 2022-11-02 15:35:15
 -->
 <template>
   <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
@@ -14,7 +14,7 @@
           <i :class="['icon', iconclass]"></i>
           <span class="title-text" v-if="title">{{ title }}</span>
         </div>
-        <p :class="{addMargin: title }" v-html="message" :style="align"></p>
+        <p :class="{addMargin: title }" v-html="message || content" :style="align"></p>
         <input v-if="type ==='prompt'" type="text" autocomplete="off" :placeholder="placeholder" :class="[{redBorder: showRedBorder} , 'zfs-input__inner']" v-model="value" @input="handlerInput">
         <p class="warningMsg" v-show="showWarningMsg">{{warningMsg}}</p>
       </div>
@@ -22,8 +22,8 @@
         {{ alertButtonText }}
       </div>
       <div v-else :class="['bottons', type]">
-        <span class="cancel" @click="handlerCancel">{{ cancelButtonText }}</span>
-        <span  @click="handlerConfirm">{{ confirmButtonText }}</span>
+        <span class="cancel" @click="handlerCancel">{{ cancelText || cancelButtonText }}</span>
+        <span  @click="handlerConfirm">{{ confirmText || confirmButtonText }}</span>
       </div>
     </div>
   </div>
@@ -36,7 +36,8 @@ export default {
   data() {
     return {
       title: '',
-      message: '',
+      message: '', 
+      content: '', //兼容历史别的组件dialog用法同content
       type: 'alert',
       iconclass: '',
       value: '',
@@ -45,12 +46,16 @@ export default {
       alertButtonText: '我知道了',
       confirmButtonText: '确定',
       cancelButtonText: '取消',
+      confirmText: '',  //兼容历史别的组件dialog用法同confirmButtonText
+      cancelText: '',   //兼容历史别的组件dialog用法同cancelButtonText
       placeholder:'请输入',
       visible: false,
       showRedBorder: false,
       showWarningMsg: false,
       messageAlign: 'center',
-      beforeSubmit: ''
+      beforeSubmit: '',
+      onConfirm: '',
+      onCancel: '',
     }
   },
   computed: {
@@ -67,7 +72,10 @@ export default {
     },
     handlerCancel() {
       this.visible = false;
-      this.callback('cancel')
+      this.callback('cancel');
+      if (this.onCancel && Object.prototype.toString.call(this.onCancel) === '[object Function]') {
+        this.onCancel();
+      }
     },
     handlerInput() {
       if (this.type === 'prompt' && this.inputPattern) {
@@ -88,7 +96,10 @@ export default {
         return;
       }
       this.visible = false;
-      this.callback('confirm' ,this.value)
+      this.callback('confirm' ,this.value);
+      if (this.onConfirm && Object.prototype.toString.call(this.onConfirm) === '[object Function]') {
+        this.onConfirm();
+      }
     }
   }
 }
