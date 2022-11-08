@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-08 10:11:02
+ * @LastEditTime: 2022-11-08 10:32:23
 -->
 # 模态框
 ## 示例
@@ -13,8 +13,9 @@
   <div style="display:flex;flex-wrap:wrap">
     <zfs-button size="big" @click="open1">提示弹窗</zfs-button>
     <zfs-button size="big" @click="open2">提示弹窗（无标题）</zfs-button>
-    <zfs-button size="big" @click="open3">确认弹窗</zfs-button>
-    <zfs-button size="big" @click="open4">输入确认弹窗</zfs-button>
+    <zfs-button size="big" @click="open3">确认弹窗1</zfs-button>
+    <zfs-button size="big" @click="open4">确认弹窗2</zfs-button>
+    <zfs-button size="big" @click="open5">输入确认弹窗</zfs-button>
   </div>
 </template>
 <script>
