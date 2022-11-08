@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:26:41
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-31 15:11:55
+ * @LastEditTime: 2022-09-20 17:52:03
  */
 module.exports = {
   theme: '',
@@ -59,6 +59,10 @@ module.exports = {
       {
         title: '移动端业务组件展示',
         path: '/componentDocs/mobile'
+      },
+      {
+        title: '自定义指令',
+        path: '/componentDocs/directives'
       }
     ]
   }

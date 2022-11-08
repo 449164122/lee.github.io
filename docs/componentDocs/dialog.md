@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-30 16:19:24
+ * @LastEditTime: 2022-11-08 10:11:02
 -->
 # 模态框
 ## 示例
@@ -45,13 +45,26 @@
     open3() {
       this.$dialog(
         {
-          title: '审批意见',
+          title: '回调不同写法1',
           message: '内容内容内容内容内容',
           type: 'confirm'
         }
-      )
+      ).then(() => {
+        console.log('确认');
+      }).catch(()=>{console.log('取消');})
     },
     open4() {
+      this.$dialog(
+        {
+          title: '回调不同写法2',
+          message: '内容内容内容内容内容',
+          type: 'confirm',
+          onConfirm: () => {console.log('确认');},
+          onCancel: () => {console.log('取消');}
+        }
+      )
+    },
+    open5() {
       this.$dialog(
         {
           title: '审批意见',
@@ -132,3 +145,5 @@
 |参数 | 说明 |
 | ---- | ---- |
 |beforeSubmit|type为prompt点确认之前的校验函数|
+|onConfirm|点击确认按钮回调函数|
+|onCancel|点击取消按钮回调函数|
