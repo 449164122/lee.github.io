@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-08 10:32:23
+ * @LastEditTime: 2022-11-09 09:00:39
 -->
 # 模态框
 ## 示例
@@ -72,7 +72,9 @@
           message: '内容内容内容内容内容',
           type: 'prompt'
         }
-      )
+      ).then((res) => {
+        console.log(res);
+      }
     }
   }
 };
