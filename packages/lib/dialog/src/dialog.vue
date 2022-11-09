@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-08 14:40:03
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-02 15:35:15
+ * @LastEditTime: 2022-11-09 08:59:22
 -->
 <template>
   <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
@@ -98,7 +98,7 @@ export default {
       this.visible = false;
       this.callback('confirm' ,this.value);
       if (this.onConfirm && Object.prototype.toString.call(this.onConfirm) === '[object Function]') {
-        this.onConfirm();
+        this.onConfirm(this.value);
       }
     }
   }
