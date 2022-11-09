@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-09 09:03:25
+ * @LastEditTime: 2022-11-09 15:46:43
 -->
 # 模态框
 ## 示例
@@ -70,7 +70,7 @@
         {
           title: '审批意见',
           message: '内容内容内容内容内容',
-          type: 'prompt'
+          type: 'prompt',
         }
       ).then((res) => {
         console.log(res);
@@ -142,6 +142,8 @@
 |cancelButtonText|取消文字|string|-|取消|
 |confirmButtonText|确认文字|string|-|确认|
 |placeholder|占位文字|string|-|请输入|
+|value|输入框值|string|-|-|
+|showInput|是否显示输入框|boolean|true,false|true|
 |messageAlign|内容对齐方式|string|left,center,right|center|
 
 ## 方法
