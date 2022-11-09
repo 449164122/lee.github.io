@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-09 09:00:39
+ * @LastEditTime: 2022-11-09 09:03:25
 -->
 # 模态框
 ## 示例
@@ -74,7 +74,7 @@
         }
       ).then((res) => {
         console.log(res);
-      }
+      })
     }
   }
 };
