@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-08 14:40:03
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-09 08:59:22
+ * @LastEditTime: 2022-11-09 15:38:15
 -->
 <template>
   <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
@@ -15,7 +15,7 @@
           <span class="title-text" v-if="title">{{ title }}</span>
         </div>
         <p :class="{addMargin: title }" v-html="message || content" :style="align"></p>
-        <input v-if="type ==='prompt'" type="text" autocomplete="off" :placeholder="placeholder" :class="[{redBorder: showRedBorder} , 'zfs-input__inner']" v-model="value" @input="handlerInput">
+        <input v-if="type ==='prompt'" v-show="showInput" type="text" autocomplete="off" :placeholder="placeholder" :class="[{redBorder: showRedBorder} , 'zfs-input__inner']" v-model="value" @input="handlerInput">
         <p class="warningMsg" v-show="showWarningMsg">{{warningMsg}}</p>
       </div>
       <div v-if="type ==='alert'" :class="['bottons', type]" @click="handlerConfirm">
@@ -49,6 +49,7 @@ export default {
       confirmText: '',  //兼容历史别的组件dialog用法同confirmButtonText
       cancelText: '',   //兼容历史别的组件dialog用法同cancelButtonText
       placeholder:'请输入',
+      showInput: true,
       visible: false,
       showRedBorder: false,
       showWarningMsg: false,
