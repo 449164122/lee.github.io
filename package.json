@@ -1,6 +1,6 @@
 {
-  "name": "zfs-mobile",
-  "version": "0.1.20",
+  "name": "zfs-mobile-beta",
+  "version": "0.1.21",
   "descroption": "A Component Library for Vue.js.",
   "files": [
     "lib",
@@ -21,7 +21,8 @@
   "main": "lib/index.umd.js",
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^2.7.10"
+    "vue": "^2.7.10",
+    "zfs-mobile": "^0.1.20"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.17",
