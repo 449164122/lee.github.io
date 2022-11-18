@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:39:48
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-30 16:33:45
+ * @LastEditTime: 2022-11-18 10:30:22
 -->
 # 按钮
 
@@ -86,6 +86,8 @@ Props
 |size | 尺寸，可选值为 big medium small | string | big|
 |text | 按钮文字 | string | -|
 |color | 按钮颜色，支持传入 linear-gradient 渐变色 | string | -|
+|icon | 左侧图标名称或图片链接，等同于vant Icon 组件的 name 属性 | string | -|
+|icon-prefix | 图标类名前缀，等同于vant Icon 组件的 class-prefix 属性 | string | -|
 |tag | 按钮根节点的 HTML 标签 | string | button|
 |native-type | 原生 button 标签的 type 属性 | string | button|
 |block | 是否为块级元素 | boolean | false|
