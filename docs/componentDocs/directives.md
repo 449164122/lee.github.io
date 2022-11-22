@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-09-20 17:52:22
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-18 11:15:54
+ * @LastEditTime: 2022-11-22 09:17:37
 -->
 ## 防抖
 `v-debounce`
@@ -10,6 +10,9 @@
 v-debounce="方法名"
 // 如
 v-debounce="handleConfirm"
+
+// 默认防抖时间为1000毫秒，可修改
+v-debounce:300="handleConfirm"
 ```
 ## 节流
 `v-throttle`
@@ -17,6 +20,9 @@ v-debounce="handleConfirm"
 v-throttle="方法名"
 // 如
 v-throttle="handleConfirm"
+
+// 默认节流时间为1000毫秒，可修改
+v-throttle:300="handleConfirm"
 ```
 
 ## 双击查看全部
@@ -41,6 +47,6 @@ export default {
 </script>
 ```
 :::
-<div>
+
 ## 水印
 `v-watermark`

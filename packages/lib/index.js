@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-19 11:36:31
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-24 10:54:28
+ * @LastEditTime: 2022-11-22 15:04:47
  */
 import badge from "./badge";
 import avatar from "./avatar";
@@ -13,6 +13,8 @@ import Loading from "./loading";
 import Dialog from "./dialog";
 import Cell from "./cell";
 import CellGroup from "./cell-group";
+import datetimePicker from "./datetimePicker";
+import picker from "./picker";
 import directives from "../directives"
 import filters from "../filters"
 
@@ -22,7 +24,9 @@ const components = {
   search,
   avatar,
   Cell,
-  CellGroup
+  CellGroup,
+  datetimePicker,
+  picker
 };
 
 const install = function(Vue) {

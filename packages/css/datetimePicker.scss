@@ -1,0 +1,18 @@
+.zfs-datetime-picker {
+  .van-picker__toolbar {
+    border-bottom: 1px solid rgba(232,232,232,0.6);
+  }
+  .van-picker__title {
+    font-weight: Bold;
+    color: #010101;
+  }
+  .van-picker__cancel {
+    color: #333333;
+  }
+  .van-picker__confirm, .van-picker-column__item--selected {
+    color:#4789FF;
+  }
+  .van-picker-column__item--selected {
+    color:#4789FF;
+  }
+}

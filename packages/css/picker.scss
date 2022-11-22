@@ -1,0 +1,20 @@
+.zfs-picker {
+  .van-picker__toolbar {
+    border-bottom: 1px solid rgba(232,232,232,0.6);
+    .van-picker__confirm {
+      color: #4789FF;
+      font-size: 15px;
+    }
+    .van-picker__cancel {
+      color: #333333;
+      font-size: 15px;
+    }
+    .van-picker__title {
+      color: #010101;
+      font-weight: bold;
+    }
+  }
+  .van-picker-column__item--selected {
+    color:#4789FF;
+  }
+}

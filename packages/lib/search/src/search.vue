@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-15 14:52:24
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-16 14:05:33
+ * @LastEditTime: 2022-11-22 17:09:24
 -->
 <template>
   <div class="zfs-search">
@@ -18,9 +18,7 @@
       @cancel="handlerCancel"
       :placeholder="placeholder"
     >
-      <template v-if="$slots['left-icon']" slot="left-icon">\
-        <slot name="left-icon"></slot>
-      </template>
+      <i slot="left-icon" class="icon-search"></i>
     </van-search>
       <slot></slot>
   </div>

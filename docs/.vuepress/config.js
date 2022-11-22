@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:26:41
  * @LastEditors: 李韬
- * @LastEditTime: 2022-09-20 17:52:03
+ * @LastEditTime: 2022-11-22 15:06:42
  */
 module.exports = {
   theme: '',
@@ -51,6 +51,14 @@ module.exports = {
       {
         title: '列表组件',
         path: '/componentDocs/cell'
+      },
+      {
+        title: '时间选择',
+        path: '/componentDocs/datetimePicker'
+      },
+      {
+        title: 'Picker 选择器',
+        path: '/componentDocs/picker'
       },
       {
         title: '头像',
