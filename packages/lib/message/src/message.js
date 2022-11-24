@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:39:01
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-08 14:15:40
+ * @LastEditTime: 2022-11-24 14:38:04
  */
 import Vue from 'vue';
 import message from './message.vue';
@@ -30,7 +30,7 @@ const Message = function(options) {
   instance.verticalOffset = verticalOffset;
   instance.visible = true;
 };
-
+Message.close = () => { instance.visible = false};
 types.forEach(type => {
   Message[type] = (options) => {
     return Message({
