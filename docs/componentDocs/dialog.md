@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-09 15:46:43
+ * @LastEditTime: 2022-11-24 14:49:06
 -->
 # 模态框
 ## 示例
@@ -152,3 +152,4 @@
 |beforeSubmit|type为prompt点确认之前的校验函数|
 |onConfirm|点击确认按钮回调函数|
 |onCancel|点击取消按钮回调函数|
+|close|关闭Dialog|

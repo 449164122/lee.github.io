@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:41:56
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-29 17:04:30
+ * @LastEditTime: 2022-11-24 14:49:59
 -->
 # 消息提示
 
@@ -98,3 +98,8 @@ export default {
 |type|主题|string|info,success,warning,error |info|
 |showClose|手动关闭|boolean|true,false |false|
 |closeText|关闭按钮文字|string|- |我知道了|
+
+## 方法
+|参数 | 说明 |
+| ---- | ---- |
+|close|关闭Dialog|
