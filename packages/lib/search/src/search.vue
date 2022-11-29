@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-15 14:52:24
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-29 18:33:19
+ * @LastEditTime: 2022-11-29 21:03:01
 -->
 <template>
   <div class="zfs-search">
@@ -41,9 +41,13 @@ export default {
   },
   data() {
     return {
-      searchValue: this.value,
       isCenter: true,
       showList: [],
+    }
+  },
+  computed: {
+    searchValue() {
+      return this.value;
     }
   },
   methods: {
