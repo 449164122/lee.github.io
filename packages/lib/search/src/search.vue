@@ -2,12 +2,12 @@
  * @Author: 李韬
  * @Date: 2022-07-15 14:52:24
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-22 17:09:24
+ * @LastEditTime: 2022-11-29 18:33:19
 -->
 <template>
   <div class="zfs-search">
     <van-search
-      v-model="value"
+      v-model="searchValue"
       :shape="shape"
       v-bind="$attrs"
       @search="handlerSearch"
@@ -29,6 +29,7 @@
 export default {
   name: 'zfsSearch',
   props: {
+    value: String,
     shape:{
       type: String,
       default: 'round',
@@ -40,7 +41,7 @@ export default {
   },
   data() {
     return {
-      value: '',
+      searchValue: this.value,
       isCenter: true,
       showList: [],
     }
