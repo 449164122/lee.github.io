@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:41:56
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-24 14:49:59
+ * @LastEditTime: 2022-11-29 18:35:50
 -->
 # 消息提示
 
@@ -102,4 +102,4 @@ export default {
 ## 方法
 |参数 | 说明 |
 | ---- | ---- |
-|close|关闭Dialog|
+|close|关闭提示|

@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-30 10:30:24
+ * @LastEditTime: 2022-11-30 10:34:21
 -->
 # 模态框
 ## 示例
@@ -91,6 +91,7 @@
   <div style="display:flex;flex-wrap:wrap">
     <zfs-button size="big" @click="open5">正则校验</zfs-button>
     <zfs-button size="big" @click="open6">提交校验</zfs-button>
+    <zfs-button size="big" @click="open7">函数校验</zfs-button>
   </div>
 </template>
 <script>
@@ -120,6 +121,22 @@
                 return false;
               }
               return true;
+            }
+          }
+        )
+      },
+      open7() {
+        this.$dialog(
+          {
+            title: '审批意见',
+            message: '内容内容内容内容内容',
+            type: 'prompt',
+            inputValidator: function(value) {
+              let flag = false;
+              if (value.indexOf('苹果') > -1) {
+                flag = true;
+              }
+              return flag;
             }
           }
         )
