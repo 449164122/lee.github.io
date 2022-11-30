@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:42:55
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-24 14:49:06
+ * @LastEditTime: 2022-11-30 10:30:24
 -->
 # 模态框
 ## 示例
@@ -141,6 +141,7 @@
 |alertButtonText|type为alert确认文字|string|-|我知道了|
 |cancelButtonText|取消文字|string|-|取消|
 |confirmButtonText|确认文字|string|-|确认|
+|inputValidator|输入框的校验函数。可以返回布尔值或字符串，若返回一个字符串, 则返回结果会被赋值给 warningMsg|function|-|-|
 |placeholder|占位文字|string|-|请输入|
 |value|输入框值|string|-|-|
 |showInput|是否显示输入框|boolean|true,false|true|

@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-08 14:40:03
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-09 15:38:15
+ * @LastEditTime: 2022-11-30 10:16:32
 -->
 <template>
   <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import { isFunction, isString } from 'zfs-mobile/packages/utils/types';
+
 export default {
   name: 'zfsDialog',
   data() {
@@ -48,6 +50,7 @@ export default {
       cancelButtonText: '取消',
       confirmText: '',  //兼容历史别的组件dialog用法同confirmButtonText
       cancelText: '',   //兼容历史别的组件dialog用法同cancelButtonText
+      inputValidator: '', 
       placeholder:'请输入',
       showInput: true,
       visible: false,
@@ -86,6 +89,13 @@ export default {
         } else {
           this.showRedBorder = false;
           this.showWarningMsg = false;
+        }
+      }
+      if (this.type === 'prompt' && this.inputValidator && isFunction(this.inputValidator) && this.inputValidator(this.value)) {
+        this.showRedBorder = true;
+        this.showWarningMsg = true;
+        if (isString(this.inputValidator(this.value))) {
+          this.warningMsg = this.inputValidator(this.value)
         }
       }
     },
