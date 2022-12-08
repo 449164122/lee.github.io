@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:38:27
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-26 15:34:30
+ * @LastEditTime: 2022-12-08 17:44:46
 -->
 <template>
     <transition name="zfs-message-fade" @after-leave="handleAfterLeave">
@@ -18,7 +18,7 @@
       :style="positionStyle"
       v-show="visible">
       <i :class="['icon', iconType]"></i>
-      <span class="zfs-message__content">{{ message }}</span>
+      <span class="zfs-message__content" v-html="message"></span>
       <div v-if="showClose" @click="visible = false" class="button">{{closeText}} </div>
     </div>
   </transition>
