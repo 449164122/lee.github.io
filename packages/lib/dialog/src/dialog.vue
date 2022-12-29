@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-08 14:40:03
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-30 10:16:32
+ * @LastEditTime: 2022-12-29 09:03:39
 -->
 <template>
   <transition name="zfs-dialog-fade" @after-leave="handleAfterLeave">
@@ -91,11 +91,16 @@ export default {
           this.showWarningMsg = false;
         }
       }
-      if (this.type === 'prompt' && this.inputValidator && isFunction(this.inputValidator) && this.inputValidator(this.value)) {
-        this.showRedBorder = true;
-        this.showWarningMsg = true;
-        if (isString(this.inputValidator(this.value))) {
-          this.warningMsg = this.inputValidator(this.value)
+      if (this.type === 'prompt' && this.inputValidator && isFunction(this.inputValidator)) {
+        if (this.inputValidator(this.value)) {
+          this.showRedBorder = true;
+          this.showWarningMsg = true;
+          if (isString(this.inputValidator(this.value))) {
+            this.warningMsg = this.inputValidator(this.value)
+          }
+        } else {
+          this.showRedBorder = false;
+          this.showWarningMsg = false;
         }
       }
     },
