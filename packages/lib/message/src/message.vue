@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:38:27
  * @LastEditors: 李韬
- * @LastEditTime: 2022-12-08 17:44:46
+ * @LastEditTime: 2023-01-19 09:08:04
 -->
 <template>
     <transition name="zfs-message-fade" @after-leave="handleAfterLeave">
@@ -15,6 +15,7 @@
           showClose: showClose
         }
       ]"
+      id="zfs-r-message"
       :style="positionStyle"
       v-show="visible">
       <i :class="['icon', iconType]"></i>

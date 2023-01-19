@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:39:01
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-24 14:38:04
+ * @LastEditTime: 2023-01-19 09:12:01
  */
 import Vue from 'vue';
 import message from './message.vue';
@@ -25,6 +25,10 @@ const Message = function(options) {
     data: options
   });
   instance.$mount();
+  const prev = document.getElementById('zfs-r-message');
+  if (prev) {
+    document.body.removeChild(prev);
+  }
   document.body.appendChild(instance.$el);
   let verticalOffset = document.querySelector('.zte-header') ? 40: 0;
   instance.verticalOffset = verticalOffset;
