@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:38:27
  * @LastEditors: 李韬
- * @LastEditTime: 2023-01-19 09:08:04
+ * @LastEditTime: 2023-03-01 11:33:01
 -->
 <template>
     <transition name="zfs-message-fade" @after-leave="handleAfterLeave">
@@ -20,7 +20,7 @@
       v-show="visible">
       <i :class="['icon', iconType]"></i>
       <span class="zfs-message__content" v-html="message"></span>
-      <div v-if="showClose" @click="visible = false" class="button">{{closeText}} </div>
+      <div v-if="showClose" @click="close" class="button">{{closeText}} </div>
     </div>
   </transition>
 </template>
@@ -36,7 +36,8 @@ export default {
       visible: false,
       verticalOffset: 0,
       duration: 2000,
-      closeText: '我知道了'
+      closeText: '我知道了',
+      onConfirm: '',
     }
   },
   mounted() {
@@ -57,6 +58,12 @@ export default {
     },
   },
   methods: {
+    close() {
+      this.visible = false;
+      if (this.onConfirm && Object.prototype.toString.call(this.onConfirm) === '[object Function]') {
+        this.onConfirm();
+      }
+    },
     handleAfterLeave() {
       this.$destroy(true);
       this.$el.parentNode.removeChild(this.$el);
