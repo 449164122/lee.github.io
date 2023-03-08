@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-07-29 15:39:01
  * @LastEditors: 李韬
- * @LastEditTime: 2023-01-19 09:12:01
+ * @LastEditTime: 2023-03-08 09:03:11
  */
 import Vue from 'vue';
 import message from './message.vue';
@@ -33,8 +33,9 @@ const Message = function(options) {
   let verticalOffset = document.querySelector('.zte-header') ? 40: 0;
   instance.verticalOffset = verticalOffset;
   instance.visible = true;
+  return instance;
 };
-Message.close = () => { instance.visible = false};
+
 types.forEach(type => {
   Message[type] = (options) => {
     return Message({
