@@ -2,7 +2,7 @@
  * @Author: 李韬
  * @Date: 2022-08-25 15:41:56
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-29 18:35:50
+ * @LastEditTime: 2023-03-01 11:50:43
 -->
 # 消息提示
 
@@ -82,6 +82,9 @@ export default {
         type: 'error',
         message: '消息提示内容',
         showClose: true
+        onConfirm() {
+          console.log('点击我知道后的回调方法')
+        }
       });
     }
   }
@@ -103,3 +106,4 @@ export default {
 |参数 | 说明 |
 | ---- | ---- |
 |close|关闭提示|
+|onConfirm|点击我知道了的回调方法|

@@ -2,13 +2,11 @@
  * @Author: 李韬
  * @Date: 2022-08-25 11:56:46
  * @LastEditors: 李韬
- * @LastEditTime: 2022-08-30 10:58:39
+ * @LastEditTime: 2023-03-21 11:46:43
 -->
 <template>
   <div id="app">
-    <zfs-button type="primary" @click="handlerClick">>123</zfs-button>
-    <zfs-button size="small" @click="$message({type:'info',showClose:true,message:'消息提示内容'})">消息</zfs-button>
-    <div v-detail="132">123123</div>
+    <zfs-button type="primary" @click="handlerClick">按钮</zfs-button>
   </div>
 </template>
 
@@ -16,26 +14,9 @@
 
 export default {
   name: 'App',
-  components: {
-  },
   methods: {
     handlerClick() {
-      this.$dialog(
-          {
-            title: '审批意见',
-            message: '内容内容内容内容内容',
-            type: 'prompt',
-            inputPattern:/[A-Z]/,
-            warningMsg:'只能输入大写字母'
-            // cb: function(value) {
-            //   if (value!='123') {
-            //     this.$message.warning('123');
-            //     return false;
-            //   }
-            //   return true;
-            // }
-          }
-        )
+      this.$message.warning('hello zfs-mobile')
     }
   }
 }
@@ -43,11 +24,6 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 100px
 }
 </style>

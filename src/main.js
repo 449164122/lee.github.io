@@ -2,12 +2,12 @@
  * @Author: 李韬
  * @Date: 2022-08-25 11:56:46
  * @LastEditors: 李韬
- * @LastEditTime: 2022-11-22 14:31:10
+ * @LastEditTime: 2023-03-21 11:37:33
  */
 import Vue from 'vue'
 import App from './App.vue'
-import zfsMobile from 'zfs-mobile';
-import 'zfs-mobile/lib/css/index.css';
+import zfsMobile from '../packages/lib/index';
+import '../packages/css/index.scss';
 import directives from '../packages/directives'
 Vue.config.productionTip = false
 import { Button, Search, Badge, DatetimePicker, Picker } from 'vant';
